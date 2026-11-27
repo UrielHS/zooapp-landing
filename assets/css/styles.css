@@ -173,10 +173,26 @@ details p { padding: 0 24px 22px; color: var(--tinta-2); font-size: 16px; max-wi
 .legal-cabecera { background: var(--bosque); color: #fff; }
 .legal-cabecera .envoltura { display: flex; flex-direction: column; gap: 28px; padding-block: 28px 56px; }
 .legal-cabecera h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; }
-.legal-cuerpo { padding-block: 56px 96px; }
-.legal-cuerpo .envoltura > * { max-width: 760px; }
-.legal-cuerpo h2 { font-size: 28px; color: var(--bosque); margin: 40px 0 12px; }
-.legal-cuerpo p, .legal-cuerpo li { color: var(--tinta-2); }
+.legal-cuerpo { padding-block: 48px 96px; }
+.legal-titulo { display: flex; flex-direction: column; gap: 10px; }
+.legal-titulo p { color: var(--hoja); font-size: 15px; }
+.legal-rejilla { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px; align-items: start; }
+.indice { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 16px; background: var(--niebla); border: 1.5px solid var(--borde); }
+.indice ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.indice a { color: var(--tinta-2); font-size: 14px; font-weight: 600; text-decoration: none; line-height: 1.35; display: block; }
+.indice a:hover { color: var(--esmeralda); text-decoration: underline; }
+.legal-texto { max-width: 760px; min-width: 0; }
+.legal-intro { font-size: 19px; color: var(--tinta) !important; margin-top: 28px; }
+.legal-texto section { scroll-margin-top: 24px; }
+.legal-texto h2 { font-size: 28px; color: var(--bosque); margin: 44px 0 14px; }
+.legal-texto h3 { font-size: 20px; color: var(--tinta); margin: 22px 0 8px; }
+.legal-texto p, .legal-texto li { color: var(--tinta-2); }
+.legal-texto p + p { margin-top: 12px; }
+.legal-texto ul, .legal-texto ol { padding-left: 22px; display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
+.legal-texto b, .legal-texto strong { color: var(--tinta); }
+.legal-texto #simplificado { margin-top: 32px; padding: 4px 28px 24px; border-radius: 18px; border: 1.5px solid var(--borde); background: var(--niebla); }
+.volver { margin-top: 40px; }
+mark.pendiente { background: #FFF1CC; color: #6B4300; font-weight: 700; padding: 1px 6px; border-radius: 6px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .preparacion { display: block; padding: 22px 24px; border-radius: 16px; background: #FFF1CC; border: 1.5px solid #E9C46A; color: #6B4300; }
 
 /* ---------- responsivo ---------- */
@@ -186,6 +202,8 @@ details p { padding: 0 24px 22px; color: var(--tinta-2); font-size: 16px; max-wi
   .funciones { grid-template-columns: 1fr; }
   .pasos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .progreso .envoltura { grid-template-columns: 1fr; }
+  .legal-rejilla { grid-template-columns: 1fr; gap: 24px; }
+  .indice { position: static; }
 }
 @media (max-width: 720px) {
   body { font-size: 16px; }
